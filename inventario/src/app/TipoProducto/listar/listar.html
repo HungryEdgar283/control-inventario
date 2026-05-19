@@ -1,0 +1,24 @@
+<div class="table-responsive mt-3">
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th style="width: 10%;">ID</th>
+                <th>Nombre del Tipo de Producto</th>
+                <th style="width: 25%;">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tipo of tipos">
+                <td>{{ tipo.id }}</td>
+                <td>{{ tipo.nombre }}</td>
+                <td>
+                    <button (click)="Editar(tipo)" class="btn btn-warning btn-sm me-2">Editar</button>
+                    <button (click)="Delete(tipo)" class="btn btn-danger btn-sm">Eliminar</button>
+                </td>
+            </tr>
+            <tr *ngIf="tipos.length === 0">
+                <td colspan="3" class="text-center text-muted">No hay tipos de productos registrados.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

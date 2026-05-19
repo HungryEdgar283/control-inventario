@@ -1,0 +1,49 @@
+<nav class="menu-superior">
+    <h2>Control de Inventario</h2>
+    <div class="grupo-botones-menu">
+        <button (click)="cambiarSeccion('productos')">Módulo Productos</button>
+        <button (click)="cambiarSeccion('tipos')">Módulo Tipos de Producto</button>
+    </div>
+</nav>
+
+<div class="contenedor">
+
+    <div *ngIf="seccionActual === 'productos'" class="caja-modulo">
+        <div class="encabezado">
+            <h3>Gestión de Productos</h3>
+            <div class="botones-accion">
+                <button (click)="Listar()" class="btn-azul">Ver Tabla</button>
+                <button (click)="Nuevo()" class="btn-verde">+ Nuevo Producto</button>
+            </div>
+        </div>
+
+        <app-listar-producto *ngIf="vistaProducto === 'listar'" (alPresionarEditar)="vistaProducto = 'editar'; cd.detectChanges()">
+        </app-listar-producto>
+
+        <app-add-producto *ngIf="vistaProducto === 'agregar'" (alTerminarGuardar)="vistaProducto = 'listar'; cd.detectChanges()">
+        </app-add-producto>
+
+        <app-edit-producto *ngIf="vistaProducto === 'editar'" (alTerminarActualizar)="vistaProducto = 'listar'; cd.detectChanges()">
+        </app-edit-producto>
+    </div>
+
+    <div *ngIf="seccionActual === 'tipos'" class="caja-modulo">
+        <div class="encabezado">
+            <h3>Catálogo de Tipos de Producto</h3>
+            <div class="botones-accion">
+                <button (click)="Listar()" class="btn-azul">Ver Tabla</button>
+                <button (click)="Nuevo()" class="btn-verde">+ Nuevo Tipo</button>
+            </div>
+        </div>
+
+        <app-listar-tipo-producto *ngIf="vistaTipo === 'listar'" (alPresionarEditar)="vistaTipo = 'editar'; cd.detectChanges()">
+        </app-listar-tipo-producto>
+
+        <app-add-tipo-producto *ngIf="vistaTipo === 'agregar'" (alTerminarGuardar)="vistaTipo = 'listar'; cd.detectChanges()">
+        </app-add-tipo-producto>
+
+        <app-edit-tipo-producto *ngIf="vistaTipo === 'editar'" (alTerminarActualizar)="vistaTipo = 'listar'; cd.detectChanges()">
+        </app-edit-tipo-producto>
+    </div>
+
+</div>

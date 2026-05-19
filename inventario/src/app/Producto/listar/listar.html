@@ -1,0 +1,28 @@
+<div class="table-responsive mt-3">
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th style="width: 10%;">ID</th>
+                <th>Nombre del Producto</th>
+                <th>Cantidad</th>
+                <th>Tipo de Producto</th>
+                <th style="width: 25%;">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let producto of productos">
+                <td>{{ producto.id }}</td>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.cantidad }}</td>
+                <td>{{ producto.tipoProducto.nombre }}</td>
+                <td>
+                    <button (click)="Editar(producto)" class="btn btn-warning btn-sm me-2">Editar</button>
+                    <button (click)="Delete(producto)" class="btn btn-danger btn-sm">Eliminar</button>
+                </td>
+            </tr>
+            <tr *ngIf="productos.length === 0">
+                <td colspan="5" class="text-center text-muted">No hay productos registrados.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

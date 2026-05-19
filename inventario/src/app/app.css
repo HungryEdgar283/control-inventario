@@ -1,0 +1,79 @@
+.menu-superior {
+    background-color: #333;
+    color: white;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.grupo-botones-menu button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-left: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.grupo-botones-menu button:hover {
+    background-color: #666;
+}
+
+.contenedor {
+    width: 85%;
+    max-width: 1200px;
+    margin: 30px auto;
+    font-family: Arial, sans-serif;
+}
+
+.caja-modulo {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 25px;
+    border-radius: 6px;
+}
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+.encabezado h3 {
+    margin: 0;
+    color: #333;
+}
+
+.botones-accion button {
+    padding: 7px 14px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 8px;
+    border: none;
+}
+
+.btn-azul {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-azul:hover {
+    background-color: #0069d9;
+}
+
+.btn-verde {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-verde:hover {
+    background-color: #218838;
+}

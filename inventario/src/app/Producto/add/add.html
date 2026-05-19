@@ -1,0 +1,35 @@
+<div class="card mt-3">
+    <div class="card-header bg-dark text-white">
+        <h5 class="mb-0">Registrar Nuevo Producto</h5>
+    </div>
+
+    <div class="card-body">
+        <form (ngSubmit)="Guardar()">
+
+            <div class="mb-3">
+                <label class="form-label fw-bold text-dark">Nombre del Producto:</label>
+                <input type="text" [(ngModel)]="producto.nombre" name="nombre" class="form-control" placeholder="Laptop" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-bold text-dark">Cantidad:</label>
+                <input type="number" [(ngModel)]="producto.cantidad" name="cantidad" class="form-control" placeholder="0">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-bold text-dark">Tipo de Producto:</label>
+                <select [(ngModel)]="producto.tipoProducto.id" name="tipoProductoId" class="form-select" required>
+                    <option value="0" disabled selected>-- Selecciona un tipo --</option>
+                    <option *ngFor="let t of tiposProducto" [value]="t.id">
+                        {{ t.nombre }}
+                    </option>
+                </select>
+            </div>
+
+            <div class="mt-4">
+                <button type="submit" class="btn btn-warning btn-sm me-2">Guardar Producto</button>
+            </div>
+
+        </form>
+    </div>
+</div>
