@@ -33,7 +33,7 @@ export class AddTipoProducto {
     this.service.createTipo(this.tipoProducto).subscribe({
       next: (data) => {
         alert("¡Tipo de producto agregado con éxito!");
-        this.alTerminarGuardar.emit(); // Regresa a la tabla dinámicamente
+        this.alTerminarGuardar.emit();
       },
       error: (err: any) => {
         if (err.status === 400) {
